@@ -732,12 +732,14 @@ img {
   color: white;
 }
 
+/*--------------footer*/
+
 .footer .container {
   display: flex;
 }
 
 .footer .adds {
-  margin-top: 12px;
+  padding-top: 12px;
   margin-left: 70px;
 }
 
@@ -762,6 +764,53 @@ img {
 .footer .icon {
   fill: white;
 }
+
+.form-footer input::placeholder {
+  display: inline-block;
+  font-weight: 400;
+  /* padding: 15px;*/
+  font-size: 16px;
+  line-height: calc(20 / 16);
+  letter-spacing: 0.03em;
+
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.subscribe {
+  margin-left: 94px;
+  padding-top: 12px;
+}
+
+.subscribe b {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.form-footer .form-list input {
+  padding: 15px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: transparent;
+  height: 50px;
+}
+
+.form-footer .form-list input::placeholder {
+  color: white;
+}
+
+.form-footer .form-field {
+  flex-direction: row;
+}
+
+****************************
 /*----------------------------------------container*/
 .header {
   border-bottom: 1px solid #ececec;
