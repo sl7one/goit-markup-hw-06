@@ -817,7 +817,8 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-footer .form-list:hover input {
+.form-footer .form-list:hover input,
+.form-footer .form-list:focus input {
   border-color: var(--acent);
 }
 
