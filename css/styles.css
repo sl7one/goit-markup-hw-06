@@ -62,7 +62,6 @@ img {
   font-weight: 400;
   line-height: calc(16 / 14);
   letter-spacing: 0.03em;
-  margin-top: 10px;
 }
 
 .nav-menu,
@@ -164,7 +163,9 @@ img {
 }
 
 .effective-solutions {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   background-color: #2f303a;
   padding-top: 200px;
@@ -176,6 +177,17 @@ img {
   margin: 0px auto;
 
   /*margin-top: 80px;*/
+}
+
+.effective-solutions .btn-style {
+  max-width: 217px;
+  padding: 10px 32px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(30 / 16);
+  letter-spacing: 0.06em;
+
+  color: #ffffff;
 }
 
 .effective-solutions .header-style {
@@ -362,7 +374,6 @@ img {
   cursor: pointer;
   font-family: inherit;
   padding: 10px 32px;
-  text-align: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
 }
@@ -381,9 +392,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 528px;
   height: 581px;
-  padding: 8px;
+  padding: 40px;
 
   background: white;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -391,7 +401,22 @@ img {
   border-radius: 4px;
 
   opacity: 1;
-  transition-duration: 2500ms;
+  transition-duration: 750ms;
+}
+
+.modal b {
+  position: relative;
+
+  padding: 2px 0px 12px 0px;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(24 / 20);
+  letter-spacing: 0.03em;
+
+  color: #212121;
 }
 
 .backdrop.is-hidden {
@@ -404,39 +429,59 @@ img {
   opacity: 0;
 }
 
-/*.effective-solutions .btn-style:hover .modal {
-  animation-name: animation;
-  animation-duration: 2500ms;
-  width: 20px;
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
 }
 
-@keyframes animation {
-  0% {
-    opacity: 0;
-    background-color: red;
-    rotate: 45 deg;
-  }
-  50% {
-    opacity: 0.5;
-    background-color: blue;
-  }
-  100% {
-    opacity: 1;
-    background-color: white;
-  }
-}*/
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-.modal .btn-modal {
-  text-align: right;
+.form-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.form-submit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
 }
 
 .btn-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+
   width: 30px;
   height: 30px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: inherit;
   cursor: pointer;
+}
+
+.form-field textarea {
+  resize: none;
+  width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form .form-field input {
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 }
 
 .btns .btn-style {
