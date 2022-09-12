@@ -258,8 +258,6 @@ img {
   padding-bottom: 30px;
   padding-left: 15px;
   padding-right: 15px;
-
-  position: relative;
   border-radius: 0px 0px 4px 4px;
 }
 
@@ -378,6 +376,8 @@ img {
   border-radius: 4px;
 }
 
+/*------------------backdrop*/
+
 .backdrop {
   position: fixed;
   left: 0;
@@ -395,6 +395,7 @@ img {
   height: 581px;
   padding: 40px;
 
+  z-index: 1;
   background: white;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -428,6 +429,8 @@ img {
 .backdrop.is-hidden .modal {
   opacity: 0;
 }
+
+/*-------------------------form*/
 
 .form {
   display: flex;
@@ -469,6 +472,10 @@ img {
   cursor: pointer;
 }
 
+.btn-close:hover svg {
+  fill: #2196f3;
+}
+
 .form-field textarea {
   resize: none;
   width: 448px;
@@ -478,11 +485,49 @@ img {
   border-radius: 4px;
 }
 
+.form-field .font-style {
+  font-size: 12px;
+}
+
 .form .form-field input {
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.form-list input:hover,
+.form-list input:focus,
+.form-list textarea:hover,
+.form-list textarea:focus {
+  border-color: #2196f3;
+}
+
+.form-list textarea::placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.form-submit .font-style {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 12);
+  letter-spacing: 0.03em;
+
+  color: #757575;
+}
+
+.form-submit .font-style > a {
+  color: var(--acent);
+  text-decoration: underline;
+}
+/*-----------------------------------------------------------------*/
 
 .btns .btn-style {
   background-color: #f5f4fa;
@@ -528,6 +573,7 @@ img {
 .overlay {
   position: relative;
   overflow: hidden;
+  z-index: -1;
 }
 
 .overlay-text .font-style {
