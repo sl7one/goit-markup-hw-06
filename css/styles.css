@@ -180,7 +180,7 @@ img {
 }
 
 .effective-solutions .btn-style {
-  max-width: 217px;
+  min-width: 217px;
   padding: 10px 32px;
   font-weight: 700;
   font-size: 16px;
@@ -756,6 +756,16 @@ img {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.subscribe svg {
+  fill: white;
+}
+
+.subscribe .btn-style {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .social-networks a:hover,
 .social-networks a:focus {
   background-color: var(--acent);
@@ -800,6 +810,7 @@ img {
   border-radius: 4px;
   background-color: transparent;
   height: 50px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .form-footer .form-list input::placeholder {
