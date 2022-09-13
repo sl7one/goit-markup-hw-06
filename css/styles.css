@@ -397,6 +397,11 @@ img {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
+
+  transition: opacity, visibility;
+
+  transition-duration: 750ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal {
@@ -413,8 +418,10 @@ img {
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  opacity: 1;
-  transition-duration: 750ms;
+  transform: translate(-50%, -50%);
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal b {
@@ -439,7 +446,7 @@ img {
 }
 
 .backdrop.is-hidden .modal {
-  opacity: 0;
+  transform: translate(-50%, -50%);
 }
 
 /*-------------------------form*/
@@ -636,6 +643,8 @@ img {
   left: 0;
   bottom: 0;
   background-color: rgba(33, 149, 243, 0.3);
+
+  transform: translateY(100%);
 
   transition: transform, background-color;
 
