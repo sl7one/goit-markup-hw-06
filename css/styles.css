@@ -93,6 +93,9 @@ img {
   display: block;
   padding: 32px 0px;
   margin-top: 0px;
+
+  transition: color;
+
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -103,6 +106,9 @@ img {
   font-weight: 500;
   padding: 32px 0px;
   margin-top: 0px;
+
+  transition: color;
+
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -296,6 +302,9 @@ img {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  transition: background-color;
+
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -304,11 +313,11 @@ img {
   width: 20px;
   height: 20px;
   fill: #afb1b8;
-}
 
-.social-networks a:hover .icon,
-.social-networks a:focus .icon {
-  fill: white;
+  transition: fill;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-networks li {
@@ -342,6 +351,9 @@ img {
   color: white;
   line-height: calc(24 / 12);
   margin-top: 9px;
+
+  transition: color;
+
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -493,6 +505,7 @@ img {
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  padding-left: 42px;
 
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -501,8 +514,11 @@ img {
 .form-list input:hover,
 .form-list input:focus,
 .form-list textarea:hover,
-.form-list textarea:focus {
+.form-list textarea:focus,
+.form-list svg:hover,
+.form-list svg:focus {
   border-color: #2196f3;
+  fill: #2196f3;
 }
 
 .form-list textarea::placeholder {
@@ -527,6 +543,21 @@ img {
   color: var(--acent);
   text-decoration: underline;
 }
+
+.form .icon {
+  position: absolute;
+  left: 15px;
+  bottom: 0px;
+  transform: translateY(-50%);
+  fill: #212121;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form .form-list {
+  position: relative;
+}
 /*-----------------------------------------------------------------*/
 
 .btns .btn-style {
@@ -538,6 +569,10 @@ img {
   padding: 6px 22px;
   border-radius: 4px;
   box-shadow: none;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0), 0px 0px 0px rgba(0, 0, 0, 0),
+    0px 0px 0px rgba(0, 0, 0, 0);
+
+  transition: background-color, color, box-shadow;
 
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -568,6 +603,12 @@ img {
 .items {
   display: inline-block;
   width: 370px;
+
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0), 0px 4px 4px rgba(0, 0, 0, 0),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .overlay {
@@ -590,22 +631,22 @@ img {
   width: 100%;
   height: 100%;
   padding: 24px;
-
   display: flex;
   align-items: center;
-
   left: 0;
   bottom: 0;
+  background-color: rgba(33, 149, 243, 0.3);
 
-  transform: translateY(100%);
-  background-color: rgba(33, 149, 243, 0.8);
+  transition: transform, background-color;
+
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.items .overlay:hover .overlay-text,
-.items .overlay:focus .overlay-text {
+.items:hover .overlay-text,
+.items:focus .overlay-text {
   transform: translateY(0);
+  background-color: rgba(33, 149, 243, 0.8);
 }
 
 .items .item-container {
@@ -696,6 +737,11 @@ img {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition: border;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-list .icon {
@@ -703,18 +749,30 @@ img {
   height: 60px;
   fill: #afb1b8;
 
+  transition: fill;
+
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
 .clients-link:focus {
-  border-color: var(--acent);
+  border: 1px solid var(--acent);
 }
 
 .clients-link:hover .icon,
 .clients-link:focus .icon {
   fill: var(--acent);
+}
+
+.social-networks a:hover,
+.social-networks a:focus {
+  background-color: var(--acent);
+}
+
+.social-networks a:hover .icon,
+.social-networks a:focus .icon {
+  fill: white;
 }
 
 .clients {
@@ -753,9 +811,17 @@ img {
 }
 
 .footer .social-networks a {
+  background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color;
+
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer .social-networks a:hover,
+.footer .social-networks a:focus {
+  background-color: var(--acent);
 }
 
 .subscribe svg {
@@ -766,11 +832,6 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.social-networks a:hover,
-.social-networks a:focus {
-  background-color: var(--acent);
 }
 
 .footer .icon {
