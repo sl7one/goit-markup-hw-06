@@ -73,36 +73,68 @@
                   <ul class="form-field">
                     <li class="form-list">
                       <label class="font-style" for="name"> Ім'я</label>
-                      <input type="text" name="name" id="name" />
-                      <svg class="icon" width="12" height="12px">
-                        <use href="./images/icons/symbol-defs.svg#form-ava"></use>
-                      </svg>
+                      <div class="null">
+                        <input
+                          class="form-input"
+                          type="text"
+                          name="name"
+                          id="name"
+                          minlength="2"
+                          required
+                        />
+                        <svg class="icon" width="12" height="12px">
+                          <use href="./images/icons/symbol-defs.svg#form-ava"></use>
+                        </svg>
+                      </div>
                     </li>
                     <li class="form-list">
                       <label class="font-style" for="tel"> Телефон</label>
-                      <input type="tel" name="tel" id="tel" />
-                      <svg class="icon" width="13" height="13px">
-                        <use href="./images/icons/symbol-defs.svg#form-phone"></use>
-                      </svg>
+                      <div class="null">
+                        <input class="form-input" type="tel" name="tel" id="tel" required />
+                        <svg class="icon" width="13" height="13px">
+                          <use href="./images/icons/symbol-defs.svg#form-phone"></use>
+                        </svg>
+                      </div>
                     </li>
                     <li class="form-list">
                       <label class="font-style" for="mail"> Пошта</label>
-                      <input type="email" name="mail" id="mail" />
-                      <svg class="icon" width="15" height="12px">
-                        <use href="./images/icons/symbol-defs.svg#form-mail"></use>
-                      </svg>
+                      <div class="null">
+                        <input class="form-input" type="email" name="mail" id="mail" required />
+
+                        <svg class="icon" width="15" height="12px">
+                          <use href="./images/icons/symbol-defs.svg#form-mail"></use>
+                        </svg>
+                      </div>
                     </li>
                     <li class="form-list">
                       <label class="font-style" for="comment">Коментар</label>
-                      <textarea name="comment" id="comment" placeholder="Введіть текст"></textarea>
+                      <textarea
+                        class="textarea"
+                        name="comment"
+                        id="comment"
+                        placeholder="Введіть текст"
+                        autocomplete="off"
+                      ></textarea>
                     </li>
                   </ul>
 
                   <ul class="form-submit">
                     <li>
-                      <input type="checkbox" name="policy" id="policy" />
-                      <label class="font-style" for="policy"
-                        >Погоджуюся з розсилкою та приймаю
+                      <input
+                        class="input-checkbox visually-hidden"
+                        type="checkbox"
+                        name="policy"
+                        id="policy"
+                      />
+                      <label class="font-style" for="policy">
+                        <span class="icon-submit">
+                          <svg class="icon-mark" width="11" height="8">
+                            <use href="./images/icons/symbol-defs.svg#form-mark"></use>
+                          </svg>
+                          <svg class="icon-background" width="16" height="15">
+                            <use href="./images/icons/symbol-defs.svg#form-rect"></use>
+                          </svg> </span
+                        >Погоджуюся з розсилкою та приймаю &ensp;
                         <a href="" target="_blank" rel="noopener noreferrer"
                           >Умови договору</a
                         ></label
@@ -479,7 +511,7 @@
           <form class="form-footer">
             <ul class="form-field">
               <li class="form-list">
-                <input type="email" name="subscribe" placeholder="E-mail" />
+                <input class="form-input" type="email" name="subscribe" placeholder="E-mail" />
               </li>
               <li>
                 <button class="btn-style" type="submit">

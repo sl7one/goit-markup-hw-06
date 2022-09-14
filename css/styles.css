@@ -320,6 +320,19 @@ img {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.form-list .null {
+  position: relative;
+}
+
+.form-list .icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+
+  transform: translateY(-50%);
+  fill: #212121;
+}
+
 .social-networks li {
   margin-left: 10px;
 }
@@ -495,33 +508,41 @@ img {
   fill: #2196f3;
 }
 
-.form-field textarea {
+.form-field .textarea {
   resize: none;
   width: 448px;
   height: 120px;
   padding: 12px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+
+  transition: border;
+
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field .font-style {
   font-size: 12px;
 }
 
-.form .form-field input {
+.form .form-input {
   height: 40px;
+  width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 42px;
+
+  transition: border;
 
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-list input:hover,
-.form-list input:focus,
-.form-list textarea:hover,
-.form-list textarea:focus,
+.form-list .form-input:hover,
+.form-list .form-input:focus,
+.form-list .textarea:hover,
+.form-list .textarea:focus,
 .form-list svg:hover,
 .form-list svg:focus {
   border-color: #2196f3;
@@ -547,24 +568,82 @@ img {
 }
 
 .form-submit .font-style > a {
-  color: var(--acent);
-  text-decoration: underline;
+  color: #2196f3;
+  position: relative;
+  z-index: 0;
 }
 
-.form .icon {
+.form-submit .font-style > a::after {
+  content: '';
+  width: 0;
+  height: 1px;
+  border-radius: 5px;
   position: absolute;
-  left: 15px;
-  bottom: 0px;
-  transform: translateY(-50%);
-  fill: #212121;
+  bottom: 5px;
+  left: 0;
+  background-color: #2196f3;
 
+  transform: width;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form .form-list {
-  position: relative;
+.form-submit .font-style > a:hover:after {
+  width: 100%;
 }
+
+.form-submit .font-style:focus .icon-submit + a::after {
+  width: 100%;
+}
+
+.icon-submit {
+  position: relative;
+  z-index: 0;
+  width: 16px;
+  height: 15px;
+  border-radius: 2px;
+  margin-right: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-mark {
+  position: absolute;
+  left: 3px;
+  bottom: 3px;
+}
+
+.form-submit .font-style {
+  display: flex;
+  align-items: center;
+}
+
+.icon-mark {
+  fill: transparent;
+  transition: fill;
+
+  transition-duration: 750ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-background {
+  transition: background-color;
+
+  transition-duration: 750ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-checkbox:checked + .font-style .icon-mark {
+  fill: white;
+}
+
+.input-checkbox:checked + .font-style .icon-background {
+  fill: #2196f3;
+  background-color: #2196f3;
+}
+
 /*-----------------------------------------------------------------*/
 
 .btns .btn-style {
@@ -611,8 +690,7 @@ img {
   display: inline-block;
   width: 370px;
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0), 0px 4px 4px rgba(0, 0, 0, 0),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition: box-shadow;
 
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -806,10 +884,10 @@ img {
 
 .footer .container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer .adds {
-  padding-top: 12px;
   margin-left: 70px;
 }
 
@@ -859,7 +937,7 @@ img {
 
 .subscribe {
   margin-left: 94px;
-  padding-top: 12px;
+  align-items: baseline;
 }
 
 .subscribe b {
@@ -874,7 +952,7 @@ img {
   margin-bottom: 20px;
 }
 
-.form-footer .form-list input {
+.form-footer .form-input {
   padding: 15px 16px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
@@ -883,12 +961,14 @@ img {
   height: 50px;
   color: white;
 
+  transition: border;
+
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-footer .form-list:hover input,
-.form-footer .form-list:focus input {
+.form-footer .form-input:hover,
+.form-footer .form-input:focus {
   border-color: var(--acent);
 }
 
